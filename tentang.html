@@ -4,28 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kami – Kampanye Hemat Energi</title>
+  <title>Tentang Kami | Kampanye Hemat Energi</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 
-<body class="data-page">
+<body class="about-v2-page">
+  <a href="#kontenUtama" class="skip-link">Langsung ke konten utama</a>
 
-  <!-- ═══════════════════════════════════════════════════════
-       NAVBAR BERSAMA (SHARED NAVBAR)
-       ═══════════════════════════════════════════════════════ -->
+  <!-- Navbar Bersama -->
   <header class="site-header" id="siteHeader">
     <div class="header-container">
       <a href="index.html" class="nav-brand">
-        <span class="brand-icon">🌱</span>
+        <span class="brand-icon" aria-hidden="true">🌱</span>
         <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
       </a>
 
@@ -51,57 +48,398 @@
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════════════════════
-       HERO TENTANG KAMI
-       ═══════════════════════════════════════════════════════ -->
-  <section class="about-hero">
-    <div class="data-eyebrow">PROFIL INISIATIF &amp; TIM PENGEMBANG</div>
-    <h1 class="data-title">Menumbuhkan Budaya Hemat Energi dari Sekolah</h1>
-    <p class="data-desc">
-      Kampanye Hemat Energi merupakan inisiatif berbasis proyek (Project-Based Learning) siswa kelas <strong>XI PPLG 3 (Pengembangan Perangkat Lunak dan Gim)</strong> yang mengintegrasikan pembelajaran lintas mata pelajaran untuk meningkatkan kesadaran efisiensi daya listrik dan pelestarian alam.
-    </p>
-  </section>
+  <main id="kontenUtama">
 
-  <!-- ═══════════════════════════════════════════════════════
-       KONTEN TENTANG KAMI (2 KOLOM)
-       ═══════════════════════════════════════════════════════ -->
-  <section class="about-grid">
-    <div class="about-card">
-      <h3>Visi &amp; Latar Belakang Gerakan</h3>
-      <p>
-        Banyak dari kita tidak menyadari bahwa kebiasaan sepele—seperti membiarkan lampu menyala di siang hari, pendingin ruangan (AC) mendinginkan ruang kosong, dan pengisi daya gawai yang tetap tercolok—berkontribusi langsung terhadap krisis iklim dan pembakaran bahan bakar fosil.
-      </p>
-      <p>
-        Melalui platform web ini, kami menggabungkan <strong>simulasi visual interaktif</strong> dengan <strong>data empiris hasil angket</strong> untuk membuktikan bahwa perubahan kebiasaan kecil dari meja belajar dan kamar tidur mampu memberikan dampak nyata bagi kelangsungan ekosistem bumi.
-      </p>
+    <!-- Section 1: Kinetic Interactive Hero + Floating Leaves Canvas + Orbit Emblem -->
+    <section class="about-v2-hero about-v3-hero" id="aboutHero" aria-labelledby="aboutHeroHeading">
+      <canvas id="aboutParticlesCanvas" class="about-particles-canvas" aria-hidden="true"></canvas>
+
+      <div class="aksi-container about-hero-inner">
+        <div class="about-v2-hero-grid">
+          <div class="about-v2-hero-copy">
+            <div class="about-kicker-row about-reveal" data-delay="0">
+              <p class="v3-kicker">Proyek ESD • XI PPLG 3</p>
+              <button type="button" class="motion-toggle-btn" id="motionToggleBtn" aria-pressed="false">
+                Jeda Animasi
+              </button>
+            </div>
+
+            <h1 id="aboutHeroHeading" class="about-v2-title">
+              <span class="reveal-line-wrap">
+                <span class="reveal-block reveal-block-line-1"></span>
+                <span class="reveal-text reveal-text-line-1">Dibangun dari Kelas,</span>
+              </span>
+              <span class="reveal-line-wrap">
+                <span class="reveal-block reveal-block-line-2"></span>
+                <span class="reveal-text reveal-text-line-2">Untuk Bumi.</span>
+              </span>
+            </h1>
+
+            <p class="about-v2-lead about-reveal" data-delay="1">
+              Website kampanye kolaborasi 5 mata pelajaran untuk mengajak warga sekolah mengubah kebiasaan boros listrik
+              lewat bukti nyata dan simulasi interaktif.
+            </p>
+
+            <div class="about-v2-actions about-reveal" data-delay="2">
+              <a href="#tim" class="aksi-btn-primary">Kenali 3 Pembuat Tim</a>
+              <a href="aksi.html" class="aksi-btn-secondary">Coba Simulasi Kelas</a>
+            </div>
+          </div>
+
+          <!-- Kinetic Rotating Eco-Orbit Emblem -->
+          <div class="about-v2-visual about-reveal" data-delay="2">
+            <div class="about-emblem-card about-emblem-card--kinetic">
+              <svg class="about-emblem-svg" viewBox="0 0 420 340" width="420" height="340" role="img"
+                aria-label="Diagram visual kinetik alur 3 fase kampanye HematEnergi: Beranda, Data dan Fakta, serta Aksi Nyata">
+                <defs>
+                  <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#2f5a24" />
+                    <stop offset="100%" stop-color="#5ca34e" />
+                  </linearGradient>
+                  <linearGradient id="ringFlowGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#2f5a24" />
+                    <stop offset="50%" stop-color="#8dd17a" />
+                    <stop offset="100%" stop-color="#ffcf56" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Outer Rotating Dashed Orbit -->
+                <g class="orbit-spin-slow">
+                  <circle cx="210" cy="170" r="144" fill="none" stroke="rgba(47,90,36,0.22)" stroke-width="1.8"
+                    stroke-dasharray="7 9" />
+                  <circle cx="210" cy="26" r="6" fill="#2f5a24" />
+                  <circle cx="354" cy="170" r="5" fill="#ffcf56" stroke="#142118" stroke-width="1.5" />
+                  <circle cx="66" cy="170" r="5" fill="#5ca34e" />
+                </g>
+
+                <!-- Middle Counter-Rotating Energy Arc -->
+                <g class="orbit-spin-reverse">
+                  <circle cx="210" cy="170" r="106" fill="none" stroke="rgba(47,90,36,0.16)" stroke-width="2" />
+                  <circle cx="210" cy="170" r="106" fill="none" stroke="url(#ringFlowGrad)" stroke-width="3.5"
+                    stroke-dasharray="95 570" stroke-linecap="round" />
+                  <circle cx="210" cy="64" r="6.5" fill="#ffcf56" stroke="#142118" stroke-width="1.5" />
+                  <circle cx="210" cy="276" r="5.5" fill="#2f5a24" />
+                </g>
+
+                <!-- Inner Breathing Core -->
+                <g class="orbit-core-breathe">
+                  <circle cx="210" cy="170" r="64" fill="#edf4ec" stroke="#2f5a24" stroke-width="2.2" />
+                  <path d="M210 124 C180 146 180 194 210 216 C240 194 240 146 210 124 Z" fill="url(#leafGrad)" />
+                  <path d="M214 146 L200 172 L212 172 L206 196 L222 167 L210 167 Z" fill="#ffcf56" />
+                </g>
+
+                <!-- Floating Phase Badges -->
+                <g class="emblem-node emblem-node--1 emblem-float-a">
+                  <rect x="135" y="14" width="150" height="44" rx="12" fill="#fbfaf8" stroke="#2f5a24"
+                    stroke-width="2" />
+                  <text x="210" y="33" text-anchor="middle" fill="#2f5a24" font-size="11" font-weight="800"
+                    font-family="Plus Jakarta Sans, sans-serif">FASE 1</text>
+                  <text x="210" y="49" text-anchor="middle" fill="#142118" font-size="12" font-weight="700"
+                    font-family="Plus Jakarta Sans, sans-serif">Tarik Perhatian</text>
+                </g>
+
+                <g class="emblem-node emblem-node--2 emblem-float-b">
+                  <rect x="14" y="254" width="160" height="46" rx="12" fill="#fbfaf8" stroke="#2f5a24"
+                    stroke-width="2" />
+                  <text x="94" y="274" text-anchor="middle" fill="#2f5a24" font-size="11" font-weight="800"
+                    font-family="Plus Jakarta Sans, sans-serif">FASE 2</text>
+                  <text x="94" y="290" text-anchor="middle" fill="#142118" font-size="12" font-weight="700"
+                    font-family="Plus Jakarta Sans, sans-serif">Tunjukkan Bukti Data</text>
+                </g>
+
+                <g class="emblem-node emblem-node--3 emblem-float-c">
+                  <rect x="246" y="254" width="160" height="46" rx="12" fill="#18221b" stroke="#8dd17a"
+                    stroke-width="2" />
+                  <text x="326" y="274" text-anchor="middle" fill="#8dd17a" font-size="11" font-weight="800"
+                    font-family="Plus Jakarta Sans, sans-serif">FASE 3</text>
+                  <text x="326" y="290" text-anchor="middle" fill="#f4f2ee" font-size="12" font-weight="700"
+                    font-family="Plus Jakarta Sans, sans-serif">Ajak Bertindak Nyata</text>
+                </g>
+              </svg>
+
+              <div class="about-emblem-stats">
+                <div>
+                  <strong class="count-up" data-target="3">3</strong>
+                  <span>Anggota Tim</span>
+                </div>
+                <div>
+                  <strong class="count-up" data-target="5">5</strong>
+                  <span>Lintas Mapel</span>
+                </div>
+                <div>
+                  <strong class="count-up" data-target="120">120</strong>
+                  <span>Responden</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kinetic Scrolling Ribbon -->
+    <div class="kinetic-ribbon" aria-hidden="true">
+      <div class="kinetic-track">
+        <span>XI PPLG 3</span>
+        <span class="kinetic-sep">✦</span>
+        <span>HANNAN • KETUA &amp; FULL STACK</span>
+        <span class="kinetic-sep">✦</span>
+        <span>AGHA • FRONT END</span>
+        <span class="kinetic-sep">✦</span>
+        <span>RAFLI • BACK END</span>
+        <span class="kinetic-sep">✦</span>
+        <span>781 KWH TARGET HEMAT</span>
+        <span class="kinetic-sep">✦</span>
+        <span>5 LINTAS MAPEL</span>
+        <span class="kinetic-sep">✦</span>
+        <span>XI PPLG 3</span>
+        <span class="kinetic-sep">✦</span>
+        <span>HANNAN • KETUA &amp; FULL STACK</span>
+        <span class="kinetic-sep">✦</span>
+        <span>AGHA • FRONT END</span>
+        <span class="kinetic-sep">✦</span>
+        <span>RAFLI • BACK END</span>
+        <span class="kinetic-sep">✦</span>
+        <span>781 KWH TARGET HEMAT</span>
+        <span class="kinetic-sep">✦</span>
+        <span>5 LINTAS MAPEL</span>
+        <span class="kinetic-sep">✦</span>
+      </div>
     </div>
 
-    <div class="about-card">
-      <h3>Kolaborasi Lintas Disiplin Ilmu</h3>
-      <p>
-        Proyek ini tidak berdiri sendiri, melainkan hasil sinergi 5 mata pelajaran:
-      </p>
-      <p>
-        • <strong>Matematika:</strong> Pengumpulan data angket, statistika deskriptif, dan pembuatan grafik.<br>
-        • <strong>PABP:</strong> Landasan etika moral dan larangan pemborosan nikmat sumber daya (<em>israf</em>).<br>
-        • <strong>KIK &amp; PP:</strong> Membangun karakter gotong royong, integritas, dan kepedulian bersama.<br>
-        • <strong>Bahasa Indonesia:</strong> Penulisan teks persuasi dan penyampaian pesan yang efektif.
-      </p>
-    </div>
-  </section>
+    <!-- Section 2: 3 Team Creators with Animated Energy Circuit & Spotlight Hover -->
+    <section class="team-section team-section--kinetic" id="tim" aria-labelledby="teamHeading">
+      <!-- Animated Background Energy Circuit SVG -->
+      <svg class="team-circuit-bg" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+        <path class="circuit-track" d="M 0 120 H 260 L 340 200 H 860 L 940 120 H 1200" />
+        <path class="circuit-pulse circuit-pulse--1" d="M 0 120 H 260 L 340 200 H 860 L 940 120 H 1200" />
+        <path class="circuit-track" d="M 0 510 H 310 L 390 430 H 810 L 890 510 H 1200" />
+        <path class="circuit-pulse circuit-pulse--2" d="M 0 510 H 310 L 390 430 H 810 L 890 510 H 1200" />
+      </svg>
 
-  <!-- ═══════════════════════════════════════════════════════
-       FOOTER BERSAMA (SHARED FOOTER)
-       ═══════════════════════════════════════════════════════ -->
+      <div class="aksi-container team-inner">
+        <div class="team-header about-reveal">
+          <p class="section-index section-index--light">01 / Tim Pengembang • XI PPLG 3</p>
+          <h2 id="teamHeading" class="section-heading section-heading--light">
+            Tiga Pembuat di Balik HematEnergi
+          </h2>
+          <p class="team-sub">
+            Arahkan kursor dan klik tiap kartu anggota untuk melihat alur peran mereka dari Fase 1 hingga Fase 3.
+          </p>
+        </div>
+
+        <div class="team-grid" role="group" aria-label="Daftar anggota tim pengembang">
+
+          <!-- Member 1: Hannan (Ketua & Full Stack) -->
+          <button type="button" class="team-card team-card--lead is-selected about-reveal" data-member="hannan"
+            data-delay="0" aria-pressed="true">
+            <span class="card-spotlight-layer" aria-hidden="true"></span>
+            <div class="team-card-top">
+              <div class="team-avatar-orbit">
+                <div class="team-avatar team-avatar--gold" aria-hidden="true">H</div>
+                <span class="avatar-ring avatar-ring--gold" aria-hidden="true"></span>
+              </div>
+              <span class="team-lead-badge">Ketua Tim</span>
+            </div>
+            <div class="team-identity">
+              <h3 class="team-name">Hannan</h3>
+              <p class="team-role">Ketua &amp; Full Stack</p>
+            </div>
+            <p class="team-bio">
+              Memimpin arah kampanye, arsitektur proyek, dan menyatukan tampilan visual dengan data observasi dari
+              awal hingga akhir.
+            </p>
+            <!-- Role Kinetic Micro-Graphic: Full Stack Nodes -->
+            <div class="role-kinetic-strip" aria-hidden="true">
+              <span class="rk-bar rk-bar--1"></span>
+              <span class="rk-bar rk-bar--2"></span>
+              <span class="rk-bar rk-bar--3"></span>
+              <span class="rk-label">UI ↔ Data Sync</span>
+            </div>
+            <div class="team-tags">
+              <span>Koordinasi</span>
+              <span>Full Stack</span>
+              <span>Integrasi</span>
+            </div>
+          </button>
+
+          <!-- Member 2: Agha (Front End) -->
+          <button type="button" class="team-card about-reveal" data-member="agha" data-delay="1" aria-pressed="false">
+            <span class="card-spotlight-layer" aria-hidden="true"></span>
+            <div class="team-card-top">
+              <div class="team-avatar-orbit">
+                <div class="team-avatar" aria-hidden="true">A</div>
+                <span class="avatar-ring" aria-hidden="true"></span>
+              </div>
+              <span class="team-num-badge">02</span>
+            </div>
+            <div class="team-identity">
+              <h3 class="team-name">Agha</h3>
+              <p class="team-role">Front End</p>
+            </div>
+            <p class="team-bio">
+              Merancang antarmuka modern, efek animasi interaktif, ilustrasi visual, dan memastikan tampilan responsif
+              di HP maupun laptop.
+            </p>
+            <!-- Role Kinetic Micro-Graphic: UI Frame Shimmer -->
+            <div class="role-kinetic-strip" aria-hidden="true">
+              <span class="rk-dot-slide"></span>
+              <span class="rk-label">Visual &amp; Motion</span>
+            </div>
+            <div class="team-tags">
+              <span>UI / UX</span>
+              <span>Animasi</span>
+              <span>Responsif</span>
+            </div>
+          </button>
+
+          <!-- Member 3: Rafli (Back End) -->
+          <button type="button" class="team-card about-reveal" data-member="rafli" data-delay="2" aria-pressed="false">
+            <span class="card-spotlight-layer" aria-hidden="true"></span>
+            <div class="team-card-top">
+              <div class="team-avatar-orbit">
+                <div class="team-avatar" aria-hidden="true">R</div>
+                <span class="avatar-ring" aria-hidden="true"></span>
+              </div>
+              <span class="team-num-badge">03</span>
+            </div>
+            <div class="team-identity">
+              <h3 class="team-name">Rafli</h3>
+              <p class="team-role">Back End</p>
+            </div>
+            <p class="team-bio">
+              Menyusun struktur data survei JSON, logika perhitungan penghematan energi, dan keandalan penyimpanan lokal
+              fitur interaktif.
+            </p>
+            <!-- Role Kinetic Micro-Graphic: Data Equalizer -->
+            <div class="role-kinetic-strip" aria-hidden="true">
+              <span class="rk-eq rk-eq--1"></span>
+              <span class="rk-eq rk-eq--2"></span>
+              <span class="rk-eq rk-eq--3"></span>
+              <span class="rk-eq rk-eq--4"></span>
+              <span class="rk-label">JSON Engine</span>
+            </div>
+            <div class="team-tags">
+              <span>Data JSON</span>
+              <span>Logika App</span>
+              <span>Storage</span>
+            </div>
+          </button>
+
+        </div>
+
+        <!-- Live Interactive Contribution Spotlight -->
+        <div class="team-spotlight about-reveal" id="teamSpotlight" aria-live="polite">
+          <div class="spotlight-head">
+            <span class="spotlight-kicker">Fokus Kontribusi</span>
+            <strong class="spotlight-title" id="spotlightTitle">Hannan • Ketua &amp; Full Stack</strong>
+          </div>
+          <div class="spotlight-steps" id="spotlightSteps">
+            <div class="spotlight-chip">
+              <span>Fase 1</span>
+              <p>Menentukan konsep kampanye &amp; struktur folder proyek</p>
+            </div>
+            <div class="spotlight-chip">
+              <span>Fase 2</span>
+              <p>Menyambungkan olah data lintas mapel ke halaman grafik</p>
+            </div>
+            <div class="spotlight-chip">
+              <span>Fase 3</span>
+              <p>Integrasi akhir alur Beranda ke Data hingga Aksi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 3-Phase Interactive Project Journey + Animated Pipeline -->
+    <section class="phases-section" id="perjalanan" aria-labelledby="phasesHeading">
+      <div class="aksi-container">
+        <div class="phases-head about-reveal">
+          <p class="section-index">02 / Alur Pembangunan</p>
+          <h2 id="phasesHeading" class="section-heading">Tiga Fase Menuju Website Utuh</h2>
+        </div>
+
+        <div class="phase-pipeline" aria-hidden="true">
+          <span class="pipeline-beam"></span>
+        </div>
+
+        <div class="phases-grid">
+          <a href="index.html" class="phase-card about-reveal" data-delay="0">
+            <span class="phase-step">Fase 01</span>
+            <h3 class="phase-title">Tampilan &amp; Simulasi Awal</h3>
+            <p class="phase-desc">Pohon interaktif, latar belakang kampanye, dan sakelar lampu 3D untuk menarik
+              perhatian pengunjung.</p>
+            <span class="phase-link-label">Buka Beranda</span>
+          </a>
+
+          <a href="data.html" class="phase-card about-reveal" data-delay="1">
+            <span class="phase-step">Fase 02</span>
+            <h3 class="phase-title">Bukti Data &amp; Chart.js</h3>
+            <p class="phase-desc">Visualisasi 120 responden dan durasi pemborosan 781 kWh/bulan langsung dari file
+              JSON.</p>
+            <span class="phase-link-label">Buka Data &amp; Fakta</span>
+          </a>
+
+          <a href="aksi.html" class="phase-card phase-card--highlight about-reveal" data-delay="2">
+            <span class="phase-step">Fase 03</span>
+            <h3 class="phase-title">Aksi &amp; Rekomendasi Nyata</h3>
+            <p class="phase-desc">Ilustrasi ruang kelas interaktif, 5 aksi berbasis data, stempel 7 hari, dan kartu
+              ikrar digital.</p>
+            <span class="phase-link-label">Buka Aksi &amp; Rekomendasi</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 5 Integrated Subjects Compact Strip -->
+    <section class="collab-section" id="mapel" aria-labelledby="collabHeading">
+      <div class="aksi-container">
+        <div class="collab-box about-reveal">
+          <div class="collab-intro">
+            <p class="section-index">03 / Sinergi Kurikulum</p>
+            <h2 id="collabHeading" class="section-heading">5 Mata Pelajaran dalam Satu Gerakan</h2>
+          </div>
+
+          <div class="collab-list">
+            <div class="collab-item">
+              <strong>Matematika</strong>
+              <span>Statistika 120 responden &amp; grafik kWh</span>
+            </div>
+            <div class="collab-item">
+              <strong>PABP</strong>
+              <span>Etika amanah &amp; larangan <em>israf</em></span>
+            </div>
+            <div class="collab-item">
+              <strong>KIK</strong>
+              <span>Tanggung jawab &amp; inisiatif ruang kelas</span>
+            </div>
+            <div class="collab-item">
+              <strong>Pendidikan Pancasila</strong>
+              <span>Gotong royong warga sekolah</span>
+            </div>
+            <div class="collab-item">
+              <strong>Bahasa Indonesia</strong>
+              <span>Pesan persuasi ringkas &amp; jelas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Bersama -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-col-brand">
         <div class="footer-brand">
-          <span class="footer-logo-icon">🌱</span>
+          <span class="footer-logo-icon" aria-hidden="true">🌱</span>
           <span class="footer-logo-text">HematEnergi</span>
         </div>
         <p class="footer-tagline">
-          Gerakan kesadaran efisiensi konsumsi listrik dan pelestarian lingkungan hidup berbasis proyek kolaborasi lintas mata pelajaran.
+          Gerakan kesadaran efisiensi konsumsi listrik dan pelestarian lingkungan hidup berbasis proyek kolaborasi
+          lintas mata pelajaran.
         </p>
         <div class="footer-badge">
           <span>XI PPLG 3 • SMK Negeri</span>
@@ -121,35 +459,19 @@
       <div class="footer-col-mapel">
         <h4 class="footer-title">Integrasi Lintas Mapel</h4>
         <p class="footer-mapel-text">
-          Kolaborasi kurikulum: <strong>Matematika</strong> (Statistika), <strong>PABP</strong> (Etika Lingkungan), <strong>KIK &amp; PP</strong> (Gotong Royong &amp; Tanggung Jawab), serta <strong>Bahasa Indonesia</strong> (Komunikasi Persuasif).
+          Kolaborasi kurikulum: <strong>Matematika</strong> (Statistika), <strong>PABP</strong> (Etika Lingkungan),
+          <strong>KIK &amp; PP</strong> (Gotong Royong &amp; Tanggung Jawab), serta <strong>Bahasa Indonesia</strong>
+          (Komunikasi Persuasif).
         </p>
       </div>
     </div>
 
     <div class="footer-bottom-bar">
-      <p>&copy; 2026 Kampanye Hemat Energi • Dibuat dengan cinta untuk bumi oleh Kelompok XI PPLG 3.</p>
+      <p>&copy; 2026 Kampanye Hemat Energi • Dibuat untuk bumi oleh Hannan, Agha, dan Rafli (XI PPLG 3).</p>
     </div>
   </footer>
 
-  <!-- Mobile Toggle Menu Script -->
-  <script>
-    const mobileToggle = document.getElementById("mobileToggle");
-    const navMenu = document.getElementById("navMenu");
-    if (mobileToggle && navMenu) {
-      mobileToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("open");
-        mobileToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && navMenu.classList.contains("open")) {
-          navMenu.classList.remove("open");
-          mobileToggle.setAttribute("aria-expanded", "false");
-          mobileToggle.focus();
-        }
-      });
-    }
-  </script>
-
+  <script src="js/tentang.js?v=5" defer></script>
 </body>
 
 </html>
