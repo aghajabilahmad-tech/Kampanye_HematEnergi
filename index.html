@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HematEnergi – Save Energy, Save Nature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 1: HERO SECTION POHON INTERAKTIF
+       ═══════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <span class="cursor-hint" id="cursorHint">Move your cursor to reveal</span>
+
+    <!-- Side headings -->
+    <div class="side-heading side-heading--left">
+      Jaga<br>Lingkungan
+    </div>
+    <div class="side-heading side-heading--right">
+      Hemat<br>Energi
+    </div>
+
+    <div class="tree-container" id="treeContainer">
+      <!-- Base: living tree -->
+      <img src="./public/living-tree.png" alt="Living tree" class="tree-living" id="livingTreeImg" />
+
+      <!-- Reveal: dead tree (masked by canvas) -->
+      <img src="./public/dead-tree.png" alt="Dead tree" class="tree-dead" id="deadTreeImg"
+        style="visibility: hidden;" />
+
+      <!-- Canvas draws the composite: dead-tree clipped by ink mask -->
+      <canvas id="inkCanvas"></canvas>
+    </div>
+
+    <!-- Falling leaves overlay (hero container) -->
+    <canvas id="leavesCanvas"></canvas>
+
+    <!-- Scroll down indicator -->
+    <a href="#campaignSection" class="hero-scroll-indicator" id="scrollIndicator" aria-label="Gulir ke bawah">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 2: LATAR BELAKANG & TUJUAN KAMPANYE
+       (Tata Letak Sesuai Referensi Gambar)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="campaign-section" id="campaignSection">
+    <div class="campaign-container">
+
+      <!-- Eyebrow (Teks Kecil di Kiri Atas) -->
+      <div class="campaign-eyebrow fade-item fade-delay-eyebrow">
+        <span class="eyebrow-dot"></span>
+        KAMPANYE HEMAT ENERGI / LATAR BELAKANG &amp; TUJUAN
+      </div>
+
+      <!-- Judul Utama 2 Baris: High Line Reveal (Block Highlighter Wipe) -->
+      <h2 class="campaign-title">
+        <span class="reveal-line-wrap">
+          <span class="reveal-block reveal-block-line-1"></span>
+          <span class="reveal-text reveal-text-line-1">Jejak Energi</span>
+        </span>
+        <span class="reveal-line-wrap">
+          <span class="reveal-block reveal-block-line-2"></span>
+          <span class="reveal-text reveal-text-line-2">Masa Depan Bumi</span>
+        </span>
+      </h2>
+
+      <!-- Grid 2 Kolom Paragraf di Bagian Tengah -->
+      <div class="campaign-grid">
+        <!-- Kolom Kiri: Latar Belakang & Cerita Singkat -->
+        <div class="campaign-col fade-item fade-delay-col-1">
+          <div class="col-title">01 / Latar Belakang</div>
+          <p class="campaign-desc">
+            Di era modern, pemborosan energi kerap berlangsung tanpa kita sadari. Kebiasaan sederhana seperti membiarkan
+            lampu tetap menyala di siang hari, membiarkan pendingin udara (AC) mendinginkan ruangan kosong, hingga
+            membiarkan perangkat elektronik terus tercolok dalam mode <em>standby</em> (<strong>vampire power</strong>)
+            tanpa henti menyedot pasokan listrik nasional setiap detiknya.
+          </p>
+          <p class="campaign-desc">
+            Lebih dari 80% energi dunia masih diproduksi dari pembakaran bahan bakar fosil seperti batu bara dan minyak
+            bumi, yang melepaskan miliaran ton gas emisi karbon ke atmosfer. Setiap kilowatt-jam (kWh) listrik yang
+            terbuang sia-sia berbanding lurus dengan pohon yang ditebang, hutan yang rusak, serta ancaman krisis iklim
+            yang kian nyata bagi bumi kita.
+          </p>
+        </div>
+
+        <!-- Kolom Kanan: Tujuan Kampanye -->
+        <div class="campaign-col fade-item fade-delay-col-2">
+          <div class="col-title">02 / Tujuan Kampanye</div>
+          <p class="campaign-desc">
+            Kampanye <strong>Hemat Energi</strong> hadir sebagai seruan kesadaran bersama bagi generasi muda, pelajar,
+            institusi sekolah, dan masyarakat luas untuk beralih ke pola hidup hemat energi yang terencana dan
+            berkelanjutan. Kami mengajak setiap individu mengambil aksi nyata sederhana yang dapat dimulai langsung dari
+            meja belajar dan kamar tidur sendiri.
+          </p>
+          <p class="campaign-desc">
+            Mulai dari membiasakan diri mematikan sakelar listrik usai beraktivitas, mencabut pengisi daya yang tak lagi
+            digunakan, hingga memaksimalkan ventilasi dan pencahayaan alami di pagi serta siang hari. Menjaga efisiensi
+            energi bukan sekadar menekan biaya pengeluaran, melainkan bukti nyata cinta kita pada bumi agar pohon-pohon
+            tetap bernapas rimbun dan alam tetap lestari bagi generasi esok.
+          </p>
+        </div>
+      </div>
+
+      <!-- Area Bawah: Identitas Pembuat (Kiri) & Balok Bertumpuk (Kanan) -->
+      <div class="campaign-bottom">
+        <!-- Identitas Pembuat di Kiri Bawah -->
+        <div class="creator-metadata fade-item fade-delay-meta">
+          <div class="meta-line">
+            <span class="meta-key">Kelompok</span>
+            <span class="meta-sep">:</span>
+            <span class="meta-value">[Isi Nama Kelompok]</span>
+          </div>
+          <div class="meta-line">
+            <span class="meta-key">Kelas / Jurusan</span>
+            <span class="meta-sep">:</span>
+            <span class="meta-value">XI PPLG 3 <span class="meta-subtext">(Pengembangan Perangkat Lunak dan
+                Gim)</span></span>
+          </div>
+          <div class="meta-line">
+            <span class="meta-key">Mata Pelajaran</span>
+            <span class="meta-sep">:</span>
+            <span class="meta-value">[Isi Mata Pelajaran Terkait]</span>
+          </div>
+        </div>
+
+        <!-- Dua Balok Horizontal Bertumpuk di Kanan Bawah (Gradien Hijau) -->
+        <div class="stacked-blocks-area fade-item fade-delay-bars">
+          <!-- Balok Atas/Kiri: Gradien #2f5a24 ke #5ca34e -->
+          <div class="block-bar block-bar--upper">
+            <div class="bar-sheen"></div>
+            <div class="bar-text-content">
+              <span class="bar-badge bar-badge-1">KOMITMEN BERSAMA</span>
+              <div class="bar-reveal-wrapper">
+                <span class="bar-wipe bar-wipe-1"></span>
+                <h3 class="bar-reveal-text bar-text-1">Hemat Energi</h3>
+              </div>
+            </div>
+            <span class="bar-accent-icon bar-icon-1">⚡</span>
+          </div>
+
+          <!-- Balok Bawah/Kanan: Gradien #4a8c3f ke #8dd17a -->
+          <div class="block-bar block-bar--lower">
+            <div class="bar-sheen"></div>
+            <div class="bar-text-content">
+              <span class="bar-badge bar-badge--dark bar-badge-2">AKSI BERKELANJUTAN</span>
+              <div class="bar-reveal-wrapper">
+                <span class="bar-wipe bar-wipe-2"></span>
+                <h3 class="bar-reveal-text bar-text-2">Agar Bumi Terlindungi</h3>
+              </div>
+            </div>
+            <span class="bar-accent-icon bar-icon-2">🌱</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 3: SMART HOME ENERGY SWITCH
+       ═══════════════════════════════════════════════════════ -->
+  <section class="switch-section light-on" id="smartSwitchSection">
+    <div class="switch-container">
+      <div class="switch-grid">
+
+        <!-- Column 1 (Left): Bold Editorial Call-To-Action -->
+        <div class="switch-col-left">
+          <div class="switch-eyebrow">
+            <span class="switch-eyebrow-dot"></span>
+            <span>INTERAKSI RUMAH PINTAR / HEMAT ENERGI</span>
+          </div>
+
+          <h2 class="switch-heading">
+            <span>Mari Hemat</span>
+            <span>Mulai Dari</span>
+            <span class="switch-heading-highlight">Rumahmu.</span>
+          </h2>
+
+          <p class="switch-subcaption">
+            Langkah paling sederhana menjaga kelestarian bumi berawal dari kebiasaan kecil di dalam rumah. Coba tekan
+            sakelar dinding di samping untuk mematikan lampu dan rasakan dampaknya saat energi disimpan.
+          </p>
+
+          <!-- Interactive Live Energy Metric Status Card -->
+          <div class="energy-status-card" id="energyStatusCard">
+            <div class="energy-status-header">
+              <span class="status-indicator-dot" id="statusDot"></span>
+              <span class="status-indicator-label" id="statusLabel">60 WATT (PENGGUNAAN AKTIF)</span>
+            </div>
+            <p class="status-dynamic-text" id="statusDesc">
+              Lampu menyala menggunakan energi listrik. Membiasakan mematikan 1 lampu saat ruangan kosong selama 5 jam
+              sehari menghemat hingga 110 kWh listrik per tahun dan mengurangi emisi karbon.
+            </p>
+            <div class="status-meter-bar">
+              <div class="status-meter-fill" id="statusMeterFill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 (Center): Tactile Minimalist 3D Rocker Wall Switch -->
+        <div class="switch-col-center">
+          <div class="tactile-switch-wrap">
+            <div class="wall-plate" id="wallLightSwitch" role="button" tabindex="0" aria-label="Sakelar Lampu Pintar">
+              <!-- Screws -->
+              <div class="plate-screw plate-screw--top"><span class="screw-slot"></span></div>
+              <div class="plate-screw plate-screw--bottom"><span class="screw-slot"></span></div>
+
+              <!-- Recessed Switch Housing / Bezel -->
+              <div class="plate-recess">
+                <div class="rocker-switch" id="rockerPaddle">
+                  <div class="rocker-face rocker-face--top">
+                    <span class="rocker-text">ON</span>
+                    <span class="rocker-led" id="rockerLed"></span>
+                  </div>
+                  <div class="rocker-face rocker-face--bottom">
+                    <span class="rocker-text">OFF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="switch-click-hint">
+              <span class="click-hint-icon">👆</span>
+              <span class="click-hint-text">KLIK UNTUK MENGUBAH MODE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3 (Right): Swaying 3D Hanging Pendant Light Bulb -->
+        <div class="switch-col-right" id="bulbInteractiveZone">
+          <!-- Ambient Radial Light Aura -->
+          <div class="ambient-light-aura" id="ambientLightAura"></div>
+
+          <!-- Hanging Pendant Assembly (Pendulum Sway) -->
+          <div class="hanging-pendant" id="hangingPendant">
+            <!-- Suspended Ceiling Cord -->
+            <div class="pendant-cord-line"></div>
+
+            <!-- Ceiling Canopy Mount -->
+            <div class="pendant-canopy"></div>
+
+            <!-- Bulb & Fixture Container -->
+            <div class="pendant-bulb-unit">
+              <!-- SVG Realistic 3D Glass Pendant Bulb -->
+              <svg class="bulb-svg" viewBox="0 0 170 270" width="170" height="270" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- Socket Fixture / Metal Cap -->
+                <rect x="73" y="10" width="24" height="22" rx="3" fill="#242825" />
+                <rect x="63" y="30" width="44" height="34" rx="5" fill="url(#pendantSocketGrad)" />
+                <line x1="63" y1="40" x2="107" y2="40" stroke="#171a18" stroke-width="2.5" />
+                <line x1="63" y1="50" x2="107" y2="50" stroke="#171a18" stroke-width="2.5" />
+                <rect x="68" y="62" width="34" height="12" rx="3" fill="#323834" />
+
+                <!-- Glow Aura Inside Glass (ON state) -->
+                <ellipse class="svg-filament-aura" id="svgFilamentAura" cx="85" cy="142" rx="42" ry="52"
+                  fill="url(#innerWarmGlow)" />
+
+                <!-- Bulb Glass Teardrop Envelope -->
+                <path class="bulb-glass-contour" id="bulbGlassContour"
+                  d="M70 72 C70 72, 42 96, 42 148 C42 192, 62 222, 85 222 C108 222, 128 192, 128 148 C128 96, 100 72, 100 72 Z"
+                  fill="url(#glassTintGrad)" stroke="url(#glassEdgeGrad)" stroke-width="3" />
+
+                <!-- Filament Internal Support Mounts -->
+                <line x1="77" y1="74" x2="78" y2="128" stroke="#666f68" stroke-width="1.4" stroke-linecap="round" />
+                <line x1="93" y1="74" x2="92" y2="128" stroke="#666f68" stroke-width="1.4" stroke-linecap="round" />
+                <line x1="74" y1="126" x2="96" y2="126" stroke="#555c57" stroke-width="1.2" />
+
+                <!-- Tungsten Coiled Filament Path -->
+                <path class="bulb-tungsten-filament" id="tungstenFilament"
+                  d="M78 128 C76 112, 81 106, 85 106 C89 106, 94 112, 92 128 C89 144, 85 144, 85 128 Z" fill="none"
+                  stroke="#ffcf56" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- Realistic Glass Specular Curve Reflections -->
+                <path d="M52 120 C52 100, 64 88, 76 82" stroke="rgba(255, 255, 255, 0.75)" stroke-width="3.5"
+                  stroke-linecap="round" />
+                <ellipse cx="114" cy="178" rx="3.5" ry="10" fill="rgba(255, 255, 255, 0.4)"
+                  transform="rotate(-15 114 178)" />
+
+                <!-- Shading and Gradient Definitions -->
+                <defs>
+                  <linearGradient id="pendantSocketGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#404642" />
+                    <stop offset="50%" stop-color="#808882" />
+                    <stop offset="100%" stop-color="#262a27" />
+                  </linearGradient>
+
+                  <!-- Dynamic Glass Tint -->
+                  <radialGradient id="glassTintGrad" cx="50%" cy="46%" r="54%">
+                    <stop id="glassStop1" offset="0%" stop-color="rgba(255, 235, 160, 0.38)" />
+                    <stop id="glassStop2" offset="65%" stop-color="rgba(255, 210, 100, 0.18)" />
+                    <stop id="glassStop3" offset="100%" stop-color="rgba(255, 255, 255, 0.45)" />
+                  </radialGradient>
+
+                  <!-- Glass Edge Highlight -->
+                  <linearGradient id="glassEdgeGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop id="edgeStop1" offset="0%" stop-color="rgba(255, 255, 255, 0.85)" />
+                    <stop id="edgeStop2" offset="100%" stop-color="rgba(255, 215, 110, 0.55)" />
+                  </linearGradient>
+
+                  <!-- Inner Warm Light Glow -->
+                  <radialGradient id="innerWarmGlow" cx="50%" cy="50%" r="50%">
+                    <stop id="glowStop1" offset="0%" stop-color="rgba(255, 207, 86, 0.95)" />
+                    <stop id="glowStop2" offset="55%" stop-color="rgba(255, 175, 45, 0.4)" />
+                    <stop id="glowStop3" offset="100%" stop-color="rgba(255, 140, 20, 0)" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Floating Eco Savings Badge (Appears when Light is OFF) -->
+          <div class="eco-save-badge" id="ecoSaveBadge">
+            <span class="eco-save-icon">🌱</span>
+            <div class="eco-save-info">
+              <span class="eco-save-title">Mode Hemat Daya Aktif</span>
+              <span class="eco-save-metric">100% Efisiensi Listrik • Emisi Tercegah</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
