@@ -25,18 +25,23 @@
         <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Beranda</a>
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
+        <a href="index.html" class="nav-link active" aria-current="page">Beranda</a>
         <a href="data.html" class="nav-link">Data &amp; Fakta</a>
+        <a href="aksi.html" class="nav-link">Aksi &amp; Rekomendasi</a>
         <a href="tentang.html" class="nav-link">Tentang Kami</a>
       </nav>
 
       <div class="header-actions">
-        <a href="data.html" class="nav-cta-btn">Lihat Data Riset 📊</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <a href="data.html" class="nav-cta-btn">Lihat Data Riset</a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"
+          aria-expanded="false" aria-controls="navMenu">
+          <span class="mobile-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="mobile-toggle-label">Menu</span>
         </button>
       </div>
     </div>
@@ -363,6 +368,22 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
+       ALUR KAMPANYE: BERANDA -> DATA -> AKSI
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bridge-section" aria-label="Lanjutkan alur kampanye">
+    <div class="flow-strip-box">
+      <div class="flow-strip-copy">
+        <p class="flow-strip-label">Langkah Berikutnya dalam Kampanye</p>
+        <h2 class="flow-strip-title">Lihat bukti konsumsi listrik sekolah, lalu ambil aksi nyata di kelasmu.</h2>
+      </div>
+      <div class="flow-strip-links">
+        <a href="data.html" class="aksi-btn-primary">Buka Data &amp; Fakta</a>
+        <a href="aksi.html" class="aksi-btn-secondary">Langsung ke Aksi &amp; Rekomendasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
        FOOTER BERSAMA (SHARED FOOTER)
        ═══════════════════════════════════════════════════════ -->
   <footer class="site-footer">
@@ -385,6 +406,7 @@
         <ul class="footer-nav-list">
           <li><a href="index.html">Beranda &amp; Pohon Interaktif</a></li>
           <li><a href="data.html">Data &amp; Fakta Angket (Chart.js)</a></li>
+          <li><a href="aksi.html">Aksi &amp; Rekomendasi Nyata</a></li>
           <li><a href="tentang.html">Latar Belakang &amp; Lintas Mapel</a></li>
         </ul>
       </div>
@@ -410,7 +432,15 @@
     const navMenu = document.getElementById("navMenu");
     if (mobileToggle && navMenu) {
       mobileToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
+        const isOpen = navMenu.classList.toggle("open");
+        mobileToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navMenu.classList.contains("open")) {
+          navMenu.classList.remove("open");
+          mobileToggle.setAttribute("aria-expanded", "false");
+          mobileToggle.focus();
+        }
       });
     }
   </script>

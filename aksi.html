@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aksi &amp; Rekomendasi | Kampanye Hemat Energi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="aksi-page">
+  <a href="#kontenUtama" class="skip-link">Langsung ke konten utama</a>
+
+  <!-- Navbar Bersama -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon" aria-hidden="true">🌱</span>
+        <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="data.html" class="nav-link">Data &amp; Fakta</a>
+        <a href="aksi.html" class="nav-link active" aria-current="page">Aksi &amp; Rekomendasi</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#tantangan" class="nav-cta-btn">Mulai Tantangan 7 Hari</a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"
+          aria-expanded="false" aria-controls="navMenu">
+          <span class="mobile-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="mobile-toggle-label">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="kontenUtama">
+
+    <!-- Section 1: Editorial Split Hero -->
+    <section class="aksi-hero" aria-labelledby="aksiHeroHeading">
+      <div class="aksi-hero-grid">
+        <div class="aksi-hero-lead">
+          <p class="aksi-kicker">Fase 3: Dari Bukti Lapangan Menuju Kebiasaan Baru</p>
+          <h1 id="aksiHeroHeading" class="aksi-title">
+            Lima Langkah Nyata Menghentikan Pemborosan Listrik di Sekolah
+          </h1>
+          <p class="aksi-desc">
+            Berdasarkan hasil angket 120 siswa dan observasi perangkat kelas di Fase 2, ruang belajar kita masih
+            membuang rata-rata 781 kWh listrik setiap bulan. Setiap rekomendasi di halaman ini disusun langsung dari
+            temuan tersebut agar mudah dijalankan oleh siswa, guru, dan staf mulai hari ini.
+          </p>
+
+          <div class="aksi-hero-actions">
+            <a href="#rekomendasi" class="aksi-btn-primary">Baca 5 Rekomendasi Data</a>
+            <a href="#ikrar" class="aksi-btn-secondary">Catat Komitmen Pribadi</a>
+          </div>
+        </div>
+
+        <aside class="aksi-impact-panel" aria-label="Ringkasan target penghematan sekolah">
+          <div class="aksi-panel-head">
+            <h2 class="aksi-panel-title">Potensi Dampak Bulanan</h2>
+            <span class="aksi-data-status" id="aksiDataStatus" aria-live="polite">Memuat data survei...</span>
+          </div>
+
+          <div class="aksi-panel-loading" id="aksiDataLoading" role="status">
+            Menyelaraskan angka observasi dari data survei Fase 2...
+          </div>
+
+          <div class="aksi-panel-error" id="aksiDataError" role="alert" hidden>
+            <p id="aksiDataErrorText">Gagal memuat file data survei secara langsung. Menampilkan data cadangan yang
+              sesuai hasil observasi Fase 2.</p>
+            <button type="button" class="aksi-retry-btn" id="retryDataBtn">Coba Muat Ulang</button>
+          </div>
+
+          <dl class="aksi-metrics-list" id="aksiMetricsList">
+            <div class="aksi-metric-row">
+              <dt>Energi terbuang yang dapat ditekan</dt>
+              <dd id="heroMetricKwh">781 kWh/bln</dd>
+            </div>
+            <div class="aksi-metric-row">
+              <dt>Estimasi penghematan biaya sekolah</dt>
+              <dd id="heroMetricRupiah">Rp 1.130.000/bln</dd>
+            </div>
+            <div class="aksi-metric-row">
+              <dt>Emisi karbon yang bisa dicegah</dt>
+              <dd id="heroMetricCo2">625 kg CO2/bln</dd>
+            </div>
+            <div class="aksi-metric-row">
+              <dt>Siswa yang menyatakan siap bergerak</dt>
+              <dd id="heroMetricKomitmen">87,5% (105 siswa)</dd>
+            </div>
+          </dl>
+
+          <p class="aksi-panel-source">
+            Sumber: Olah data angket 120 responden dan observasi ruang kelas XI PPLG 3 (November 2026).
+            <a href="data.html">Lihat grafik lengkap di Data &amp; Fakta</a>.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Section 2: 5 Rekomendasi Konkret Berbasis Data -->
+    <section class="rekomendasi-section" id="rekomendasi" aria-labelledby="rekomendasiHeading">
+      <div class="aksi-container">
+        <div class="section-intro-split">
+          <div>
+            <p class="section-index">01 / Rekomendasi Berbasis Data</p>
+            <h2 id="rekomendasiHeading" class="section-heading">
+              Setiap Saran Menjawab Satu Temuan Lapangan
+            </h2>
+          </div>
+          <p class="section-summary">
+            Saring rekomendasi berdasarkan fokus kegiatan di sekolah. Tidak ada saran umum tanpa alasan: setiap langkah
+            menunjukkan angka pemborosan yang ingin kita turunkan.
+          </p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter kategori rekomendasi">
+          <button type="button" class="filter-btn is-active" data-filter="semua" aria-pressed="true">
+            Semua Rekomendasi (5)
+          </button>
+          <button type="button" class="filter-btn" data-filter="prioritas" aria-pressed="false">
+            Beban Terbesar (1)
+          </button>
+          <button type="button" class="filter-btn" data-filter="perilaku" aria-pressed="false">
+            Kebiasaan Harian (2)
+          </button>
+          <button type="button" class="filter-btn" data-filter="kelas-lab" aria-pressed="false">
+            Ruang Kelas &amp; Lab (2)
+          </button>
+        </div>
+
+        <div class="rekomendasi-empty" id="rekomendasiEmpty" hidden>
+          <p>Tidak ada rekomendasi yang cocok dengan filter ini.</p>
+          <button type="button" class="aksi-btn-secondary" id="resetFilterBtn">Tampilkan Semua Rekomendasi</button>
+        </div>
+
+        <div class="rekomendasi-layout" id="rekomendasiList">
+
+          <!-- Rekomendasi 01: Featured Full-Width Split -->
+          <article class="rec-featured" data-category="prioritas">
+            <div class="rec-featured-evidence">
+              <div class="rec-meta-row">
+                <span class="rec-number">01</span>
+                <span class="rec-priority-tag">Prioritas Utama</span>
+                <span class="rec-mapel-tag">Observasi Fisik &amp; Matematika</span>
+              </div>
+              <h3 class="rec-title">Tertibkan AC/Kipas Angin dan Dispenser Air Saat Ruang Kosong</h3>
+              <p class="rec-evidence-stat" id="recStat1">
+                450 kWh/bulan terbuang (57,6% dari total pemborosan sekolah)
+              </p>
+              <p class="rec-evidence-detail" id="recDetail1">
+                Data observasi mencatat pendingin udara menyala sia-sia rata-rata 4,5 jam/hari (270 kWh/bulan) dan
+                dispenser air 7,5 jam/hari (180 kWh/bulan) tanpa kegiatan belajar.
+              </p>
+            </div>
+
+            <div class="rec-featured-steps">
+              <h4 class="rec-steps-heading">Langkah yang bisa dilakukan hari ini</h4>
+              <ol class="rec-steps-list">
+                <li>Matikan AC atau kipas angin 15 menit sebelum jam pelajaran berakhir karena suhu ruang tetap sejuk
+                  hingga bel pulang berbunyi.</li>
+                <li>Buka jendela kelas pada pagi hari (07.00 hingga 09.00) untuk memanfaatkan udara alami sebelum
+                  menyalakan pendingin.</li>
+                <li>Cabut atau matikan sakelar pemanas dispenser air setiap selesai jam pelajaran terakhir dan sebelum
+                  akhir pekan.</li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- Pair Row: Rekomendasi 02 & 03 (Perilaku Individu) -->
+          <div class="rec-pair-grid">
+            <article class="rec-editorial" data-category="perilaku">
+              <div class="rec-meta-row">
+                <span class="rec-number">02</span>
+                <span class="rec-mapel-tag">Matematika &amp; KIK</span>
+              </div>
+              <h3 class="rec-title">Terapkan Aturan Orang Terakhir Matikan Lampu</h3>
+              <p class="rec-evidence-inline" id="recDetail2">
+                <strong>Bukti data:</strong> 33,3% siswa (40 dari 120 responden) masih pasif saat kelas kosong,
+                membuat lampu ruang kelas menyala sia-sia rata-rata 3,8 jam/hari (114 kWh/bulan).
+              </p>
+              <ul class="rec-bullet-list">
+                <li>Biasakan siswa yang paling akhir melangkah keluar saat istirahat atau pulang untuk menekan sakelar
+                  lampu tanpa menunggu petugas kebersihan.</li>
+                <li>Tempel label nama kelompok sakelar (misalnya "Lampu Depan", "Lampu Belakang") agar siswa hanya
+                  menyalakan baris lampu yang benar-benar diperlukan saat cuaca mendung.</li>
+              </ul>
+            </article>
+
+            <article class="rec-editorial" data-category="perilaku">
+              <div class="rec-meta-row">
+                <span class="rec-number">03</span>
+                <span class="rec-mapel-tag">PABP &amp; Etika Lingkungan</span>
+              </div>
+              <h3 class="rec-title">Cabut Charger Segera untuk Memutus Vampire Power</h3>
+              <p class="rec-evidence-inline" id="recDetail3">
+                <strong>Bukti data:</strong> 48,3% siswa (58 responden) membiarkan charger tetap menancap di stopkontak
+                usai mengisi daya, dan 23,4% lainnya hanya mencabut jika ingat.
+              </p>
+              <ul class="rec-bullet-list">
+                <li>Segera cabut adaptor HP atau laptop dari stopkontak dinding begitu kabel dilepas dari perangkat,
+                  termasuk sebelum istirahat.</li>
+                <li>Gunakan terminal stopkontak bersakelar di meja belajar atau sudut pengisian daya kelas sehingga arus
+                  bisa diputus sekaligus dalam satu klik.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Compact Ledger Rows: Rekomendasi 04 & 05 (Ruang Lab & Sistem Kelas) -->
+          <div class="rec-ledger-stack">
+            <article class="rec-ledger-row" data-category="kelas-lab">
+              <div class="rec-ledger-id">
+                <span class="rec-number">04</span>
+                <span class="rec-mapel-tag">Observasi Lab</span>
+              </div>
+              <div class="rec-ledger-body">
+                <h3 class="rec-title">Aktifkan Mode Hemat Daya pada Proyektor LCD dan PC Lab</h3>
+                <p class="rec-evidence-inline" id="recDetail4">
+                  <strong>Bukti data:</strong> Proyektor menyala tanpa guna 2,1 jam/hari (63 kWh/bulan) dan PC Lab
+                  Komputer 3,2 jam/hari (154 kWh/bulan), total 217 kWh/bulan.
+                </p>
+                <p class="rec-action-prose">
+                  Aktifkan fitur <em>sleep</em> otomatis 10 menit pada PC lab, gunakan mode <em>blank</em> atau matikan
+                  proyektor saat jeda pergantian guru, dan pastikan seluruh komputer dimatikan lewat menu
+                  <em>Shutdown</em> sebelum siswa keluar lab.
+                </p>
+              </div>
+            </article>
+
+            <article class="rec-ledger-row" data-category="kelas-lab">
+              <div class="rec-ledger-id">
+                <span class="rec-number">05</span>
+                <span class="rec-mapel-tag">Pendidikan Pancasila &amp; Bahasa Indonesia</span>
+              </div>
+              <div class="rec-ledger-body">
+                <h3 class="rec-title">Jadikan Pengecekan Energi Bagian Resmi Jadwal Piket Kelas</h3>
+                <p class="rec-evidence-inline" id="recDetail5">
+                  <strong>Bukti data:</strong> 87,5% siswa (105 dari 120 responden) sudah menyatakan komitmen positif
+                  untuk ikut serta, sehingga perubahan tinggal diwadahi lewat kebiasaan terstruktur.
+                </p>
+                <p class="rec-action-prose">
+                  Tambahkan tugas "Duta Piket Energi" ke daftar piket harian: 1 siswa bertugas 2 menit sebelum pulang
+                  memastikan lampu, kipas/AC, proyektor, dispenser, dan stopkontak kelas sudah dalam posisi mati.
+                </p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Impact Simulator & 7-Day Challenge (Dark Forest Band) -->
+    <section class="challenge-band" id="tantangan" aria-labelledby="tantanganHeading">
+      <div class="aksi-container">
+        <div class="challenge-header">
+          <p class="section-index section-index--light">02 / Ajakan Bertindak Interaktif</p>
+          <h2 id="tantanganHeading" class="section-heading section-heading--light">
+            Hitung Dampak Kebiasaanmu dan Ikuti Tantangan 7 Hari
+          </h2>
+          <p class="challenge-intro">
+            Centang aksi yang siap dijalankan kelasmu untuk melihat simulasi penghematan dari total 781 kWh/bulan hasil
+            observasi Fase 2, lalu jalankan misi harian selama satu minggu penuh di sekolah.
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+
+          <!-- Left: Interactive Impact Calculator from Real data.json Figures -->
+          <div class="simulator-panel">
+            <div class="panel-top-row">
+              <div>
+                <h3 class="dark-panel-title">Simulasi Dampak Aksi Kelas</h3>
+                <p class="dark-panel-sub">Pilih kebiasaan yang diterapkan secara rutin di kelas dan lab:</p>
+              </div>
+              <button type="button" class="dark-ghost-btn" id="resetSimBtn">Reset Pilihan</button>
+            </div>
+
+            <div class="sim-checklist" id="simChecklist">
+              <label class="sim-item" for="simAc">
+                <input type="checkbox" id="simAc" data-kwh="270" checked>
+                <span class="sim-item-content">
+                  <span class="sim-item-title">Matikan AC/kipas saat kelas kosong &amp; 15 menit sebelum pulang</span>
+                  <span class="sim-item-meta">Potensi tekan pemborosan: 270 kWh/bulan</span>
+                </span>
+              </label>
+
+              <label class="sim-item" for="simDispenser">
+                <input type="checkbox" id="simDispenser" data-kwh="180" checked>
+                <span class="sim-item-content">
+                  <span class="sim-item-title">Matikan sakelar dispenser air usai jam sekolah</span>
+                  <span class="sim-item-meta">Potensi tekan pemborosan: 180 kWh/bulan</span>
+                </span>
+              </label>
+
+              <label class="sim-item" for="simPc">
+                <input type="checkbox" id="simPc" data-kwh="154">
+                <span class="sim-item-content">
+                  <span class="sim-item-title">Shutdown penuh PC lab dan aktifkan sleep 10 menit</span>
+                  <span class="sim-item-meta">Potensi tekan pemborosan: 154 kWh/bulan</span>
+                </span>
+              </label>
+
+              <label class="sim-item" for="simLampu">
+                <input type="checkbox" id="simLampu" data-kwh="114" checked>
+                <span class="sim-item-content">
+                  <span class="sim-item-title">Aturan orang terakhir matikan lampu ruang kelas</span>
+                  <span class="sim-item-meta">Potensi tekan pemborosan: 114 kWh/bulan</span>
+                </span>
+              </label>
+
+              <label class="sim-item" for="simProyektor">
+                <input type="checkbox" id="simProyektor" data-kwh="63">
+                <span class="sim-item-content">
+                  <span class="sim-item-title">Matikan proyektor LCD saat jeda pergantian pelajaran</span>
+                  <span class="sim-item-meta">Potensi tekan pemborosan: 63 kWh/bulan</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="sim-result-box" aria-live="polite">
+              <div class="sim-progress-header">
+                <span id="simProgressLabel">3 dari 5 aksi dipilih (72% pemborosan ditekan)</span>
+                <span id="simProgressPct">72%</span>
+              </div>
+              <div class="sim-progress-track" aria-hidden="true">
+                <div class="sim-progress-fill" id="simProgressFill" style="width: 72%;"></div>
+              </div>
+
+              <div class="sim-numbers-grid">
+                <div class="sim-num-cell">
+                  <span class="sim-num-label">Listrik Dihemat</span>
+                  <strong class="sim-num-value" id="simKwhValue">564 kWh</strong>
+                  <span class="sim-num-unit">per bulan</span>
+                </div>
+                <div class="sim-num-cell">
+                  <span class="sim-num-label">Biaya Terjaga</span>
+                  <strong class="sim-num-value" id="simRupiahValue">Rp 816.000</strong>
+                  <span class="sim-num-unit">per bulan</span>
+                </div>
+                <div class="sim-num-cell">
+                  <span class="sim-num-label">Emisi Dicegah</span>
+                  <strong class="sim-num-value" id="simCo2Value">451 kg</strong>
+                  <span class="sim-num-unit">CO2 per bulan</span>
+                </div>
+              </div>
+              <p class="sim-footnote">
+                Perhitungan proporsional langsung dari basis observasi Fase 2 (781 kWh, Rp 1.130.000, dan 625 kg CO2 per
+                bulan).
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: 7-Day School Energy Challenge Tracker -->
+          <div class="seven-day-panel">
+            <div class="panel-top-row">
+              <div>
+                <h3 class="dark-panel-title">Tantangan 7 Hari Hemat Energi</h3>
+                <p class="dark-panel-sub">Tandai setiap hari yang berhasil kamu jalankan di sekolah atau rumah:</p>
+              </div>
+              <span class="challenge-counter" id="challengeCounter">0 / 7 hari</span>
+            </div>
+
+            <div class="day-list" id="sevenDayList">
+              <label class="day-item" for="day1">
+                <input type="checkbox" id="day1" data-day="1">
+                <span class="day-badge">Hari 1</span>
+                <span class="day-text">
+                  <strong>Audit sakelar pagi:</strong> Buka tirai dan jendela sebelum menyalakan lampu kelas.
+                </span>
+              </label>
+
+              <label class="day-item" for="day2">
+                <input type="checkbox" id="day2" data-day="2">
+                <span class="day-badge">Hari 2</span>
+                <span class="day-text">
+                  <strong>Bebas charger tercolok:</strong> Pastikan adaptor HP dan laptop langsung dicabut selesai cas.
+                </span>
+              </label>
+
+              <label class="day-item" for="day3">
+                <input type="checkbox" id="day3" data-day="3">
+                <span class="day-badge">Hari 3</span>
+                <span class="day-text">
+                  <strong>Istirahat tanpa boros:</strong> Matikan lampu, proyektor, dan kipas sebelum ke kantin.
+                </span>
+              </label>
+
+              <label class="day-item" for="day4">
+                <input type="checkbox" id="day4" data-day="4">
+                <span class="day-badge">Hari 4</span>
+                <span class="day-text">
+                  <strong>Disiplin lab komputer:</strong> Shutdown penuh PC dan matikan layar usai jam praktik.
+                </span>
+              </label>
+
+              <label class="day-item" for="day5">
+                <input type="checkbox" id="day5" data-day="5">
+                <span class="day-badge">Hari 5</span>
+                <span class="day-text">
+                  <strong>Sapu bersih jam pulang:</strong> Matikan AC 15 menit lebih awal dan cabut sakelar dispenser.
+                </span>
+              </label>
+
+              <label class="day-item" for="day6">
+                <input type="checkbox" id="day6" data-day="6">
+                <span class="day-badge">Hari 6</span>
+                <span class="day-text">
+                  <strong>Terapkan di kamar sendiri:</strong> Terapkan aturan cabut charger dan matikan lampu di rumah.
+                </span>
+              </label>
+
+              <label class="day-item" for="day7">
+                <input type="checkbox" id="day7" data-day="7">
+                <span class="day-badge">Hari 7</span>
+                <span class="day-text">
+                  <strong>Ajak satu teman sebangku:</strong> Saling mengingatkan tugas piket energi untuk minggu depan.
+                </span>
+              </label>
+            </div>
+
+            <div class="challenge-status-bar" id="challengeStatusBar" aria-live="polite">
+              <p id="challengeStatusText">Pilih hari pertama untuk mulai mencatat progres tantanganmu. Progres tersimpan
+                otomatis di perangkat ini.</p>
+              <button type="button" class="dark-ghost-btn" id="resetChallengeBtn" hidden>Ulangi Tantangan</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Tips Praktis Harian Mengikuti Jam Sekolah (Accordion / Agenda) -->
+    <section class="tips-section" id="tips-harian" aria-labelledby="tipsHeading">
+      <div class="aksi-container">
+        <div class="section-intro-split">
+          <div>
+            <p class="section-index">03 / Panduan Praktis Harian</p>
+            <h2 id="tipsHeading" class="section-heading">
+              Kebiasaan Kecil Sepanjang Jadwal Sekolah
+            </h2>
+          </div>
+          <p class="section-summary">
+            Buka setiap momen aktivitas sekolah di bawah ini untuk melihat daftar pengecekan singkat yang memakan waktu
+            kurang dari satu menit.
+          </p>
+        </div>
+
+        <div class="agenda-list">
+          <details class="agenda-item" open>
+            <summary class="agenda-summary">
+              <span class="agenda-time">07.00 WIB</span>
+              <span class="agenda-title">Pagi Hari Saat Masuk Kelas</span>
+              <span class="agenda-toggle-hint" aria-hidden="true">Detail</span>
+            </summary>
+            <div class="agenda-body">
+              <p>Cahaya matahari pagi dan udara luar masih sejuk, sehingga kelas belum membutuhkan beban listrik penuh.</p>
+              <ul>
+                <li>Buka tirai dan jendela terlebih dahulu agar cahaya alami menerangi bangku dekat jendela.</li>
+                <li>Nyalakan hanya baris lampu bagian dalam jika ruang masih redup, bukan semua sakelar sekaligus.</li>
+                <li>Tunda menyalakan AC hingga suhu kelas benar-benar mulai terasa gerah.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="agenda-item">
+            <summary class="agenda-summary">
+              <span class="agenda-time">10.00 &amp; 12.00</span>
+              <span class="agenda-title">Jam Istirahat dan Shalat Berjamaah</span>
+              <span class="agenda-toggle-hint" aria-hidden="true">Detail</span>
+            </summary>
+            <div class="agenda-body">
+              <p>Jam istirahat adalah penyumbang utama ruang kosong dengan perangkat tetap menyala tanpa pengawasan.</p>
+              <ul>
+                <li>Siswa terakhir yang keluar kelas mematikan lampu, kipas angin, dan mode tampilan proyektor.</li>
+                <li>Lepas adaptor HP atau laptop yang sudah terisi penuh agar tidak menarik daya diam-diam.</li>
+                <li>Tutup pintu kelas rapat bila AC harus tetap menyala singkat, atau matikan bila istirahat lebih dari
+                  20 menit.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="agenda-item">
+            <summary class="agenda-summary">
+              <span class="agenda-time">Jam Praktik</span>
+              <span class="agenda-title">Penggunaan Lab Komputer dan Proyektor</span>
+              <span class="agenda-toggle-hint" aria-hidden="true">Detail</span>
+            </summary>
+            <div class="agenda-body">
+              <p>PC lab dan proyektor menyumbang 217 kWh pemborosan per bulan saat dibiarkan menyala di luar sesi
+                praktik.</p>
+              <ul>
+                <li>Pastikan pengaturan daya PC mengaktifkan layar mati otomatis dalam 5 hingga 10 menit tanpa aktivitas.
+                </li>
+                <li>Jangan meninggalkan PC dalam kondisi layar kunci saat kelas praktik berganti ke jam teori.</li>
+                <li>Matikan proyektor lewat tombol <em>power</em> dua kali sesuai prosedur pendinginan lampu sebelum
+                  memutus arus.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="agenda-item">
+            <summary class="agenda-summary">
+              <span class="agenda-time">15.30 WIB</span>
+              <span class="agenda-title">Menjelang Pulang Sekolah</span>
+              <span class="agenda-toggle-hint" aria-hidden="true">Detail</span>
+            </summary>
+            <div class="agenda-body">
+              <p>Pengecekan dua menit sebelum pintu dikunci mencegah perangkat menyala semalaman hingga pagi berikutnya.
+              </p>
+              <ul>
+                <li>Duta Piket Energi memeriksa empat titik: sakelar lampu, remote/sakelar AC &amp; kipas, sakelar
+                  dispenser air, dan stopkontak dinding.</li>
+                <li>Pastikan dispenser tidak dalam kondisi memanaskan air saat sekolah tutup atau menjelang hari libur.
+                </li>
+                <li>Tutup kembali jendela dengan rapi agar esok hari ruang tetap bersih dan nyaman.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Form Ikrar Komitmen Pribadi -->
+    <section class="pledge-section" id="ikrar" aria-labelledby="ikrarHeading">
+      <div class="aksi-container">
+        <div class="pledge-grid">
+          <div class="pledge-form-card">
+            <p class="section-index">04 / Ikrar Warga Sekolah</p>
+            <h2 id="ikrarHeading" class="section-heading">Catat Satu Komitmen Aksi Pribadimu</h2>
+            <p class="pledge-lead">
+              Sebanyak 87,5% siswa menyatakan siap bergerak. Tuliskan aksi pertama yang ingin kamu mulai hari ini agar
+              tercatat sebagai pengingat pribadimu di perangkat ini.
+            </p>
+
+            <form id="pledgeForm" novalidate>
+              <div class="form-field">
+                <label for="pledgeName">Nama atau Inisial <span aria-hidden="true">*</span></label>
+                <input type="text" id="pledgeName" name="pledgeName" placeholder="Contoh: Raka / XI PPLG 3"
+                  autocomplete="name" required>
+                <span class="field-error" id="pledgeNameError" role="alert" hidden></span>
+              </div>
+
+              <div class="form-row-two">
+                <div class="form-field">
+                  <label for="pledgeRole">Peran di Sekolah <span aria-hidden="true">*</span></label>
+                  <select id="pledgeRole" name="pledgeRole" required>
+                    <option value="">Pilih peran...</option>
+                    <option value="Siswa">Siswa</option>
+                    <option value="Guru">Guru</option>
+                    <option value="Staf Sekolah">Staf Sekolah</option>
+                  </select>
+                  <span class="field-error" id="pledgeRoleError" role="alert" hidden></span>
+                </div>
+
+                <div class="form-field">
+                  <label for="pledgeAction">Aksi Utama yang Dipilih <span aria-hidden="true">*</span></label>
+                  <select id="pledgeAction" name="pledgeAction" required>
+                    <option value="">Pilih satu aksi...</option>
+                    <option value="Matikan AC/kipas & dispenser saat kelas kosong">Matikan AC/kipas &amp; dispenser saat
+                      kelas kosong</option>
+                    <option value="Jadi orang terakhir yang mematikan lampu kelas">Jadi orang terakhir yang mematikan
+                      lampu kelas</option>
+                    <option value="Langsung cabut charger usai mengisi daya">Langsung cabut charger usai mengisi daya
+                    </option>
+                    <option value="Shutdown penuh PC lab & matikan proyektor saat jeda">Shutdown penuh PC lab &amp;
+                      matikan proyektor saat jeda</option>
+                    <option value="Jalankan tugas Duta Piket Energi kelas">Jalankan tugas Duta Piket Energi kelas
+                    </option>
+                  </select>
+                  <span class="field-error" id="pledgeActionError" role="alert" hidden></span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="pledgeNote">Catatan atau Lokasi Penerapan (Opsional)</label>
+                <textarea id="pledgeNote" name="pledgeNote" rows="3"
+                  placeholder="Contoh: Mulai diterapkan di ruang kelas XI PPLG 3 dan meja belajar rumah."></textarea>
+              </div>
+
+              <div class="form-feedback" id="pledgeFormFeedback" role="status" aria-live="polite" hidden></div>
+
+              <button type="submit" class="aksi-btn-primary pledge-submit-btn">Simpan Komitmen Saya</button>
+            </form>
+          </div>
+
+          <div class="pledge-board-card" aria-labelledby="pledgeBoardTitle">
+            <div class="pledge-board-head">
+              <div>
+                <h3 id="pledgeBoardTitle" class="pledge-board-title">Catatan Komitmen Tersimpan</h3>
+                <p class="pledge-board-sub">Tersimpan lokal di browser perangkat ini.</p>
+              </div>
+              <button type="button" class="aksi-text-btn" id="clearPledgesBtn" hidden>Hapus Semua</button>
+            </div>
+
+            <div class="pledge-empty-state" id="pledgeEmptyState">
+              <p class="pledge-empty-title">Belum ada komitmen yang dicatat.</p>
+              <p class="pledge-empty-desc">
+                Isi formulir di samping untuk membuat kartu ikrar pertamamu. Hanya komitmen nyata yang kamu tulis akan
+                muncul di daftar ini.
+              </p>
+            </div>
+
+            <ul class="pledge-list" id="pledgeList" aria-live="polite"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Alur Kampanye Lanjutan -->
+    <section class="campaign-flow-strip" aria-label="Navigasi lanjutan alur kampanye">
+      <div class="aksi-container">
+        <div class="flow-strip-box">
+          <div class="flow-strip-copy">
+            <p class="flow-strip-label">Alur Kampanye Lengkap</p>
+            <h2 class="flow-strip-title">Ingin meninjau ulang bukti grafik atau cerita di balik proyek ini?</h2>
+          </div>
+          <div class="flow-strip-links">
+            <a href="data.html" class="aksi-btn-secondary">Kembali ke Data &amp; Fakta</a>
+            <a href="tentang.html" class="aksi-btn-primary">Lihat Profil Tim &amp; Lintas Mapel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Bersama -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-brand">
+        <div class="footer-brand">
+          <span class="footer-logo-icon" aria-hidden="true">🌱</span>
+          <span class="footer-logo-text">HematEnergi</span>
+        </div>
+        <p class="footer-tagline">
+          Gerakan kesadaran efisiensi konsumsi listrik dan pelestarian lingkungan hidup berbasis proyek kolaborasi
+          lintas mata pelajaran.
+        </p>
+        <div class="footer-badge">
+          <span>XI PPLG 3 • SMK Negeri</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-title">Navigasi Halaman</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Beranda &amp; Pohon Interaktif</a></li>
+          <li><a href="data.html">Data &amp; Fakta Angket (Chart.js)</a></li>
+          <li><a href="aksi.html">Aksi &amp; Rekomendasi Nyata</a></li>
+          <li><a href="tentang.html">Latar Belakang &amp; Lintas Mapel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-mapel">
+        <h4 class="footer-title">Integrasi Lintas Mapel</h4>
+        <p class="footer-mapel-text">
+          Kolaborasi kurikulum: <strong>Matematika</strong> (Statistika), <strong>PABP</strong> (Etika Lingkungan),
+          <strong>KIK &amp; PP</strong> (Gotong Royong &amp; Tanggung Jawab), serta <strong>Bahasa Indonesia</strong>
+          (Komunikasi Persuasif).
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 Kampanye Hemat Energi • Dibuat untuk bumi oleh Kelompok XI PPLG 3.</p>
+    </div>
+  </footer>
+
+  <script src="js/aksi.js" defer></script>
+</body>
+
+</html>

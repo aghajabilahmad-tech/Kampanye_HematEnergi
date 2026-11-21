@@ -29,18 +29,23 @@
         <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
       </a>
 
-      <nav class="nav-menu" id="navMenu">
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
         <a href="index.html" class="nav-link">Beranda</a>
-        <a href="data.html" class="nav-link active">Data &amp; Fakta</a>
+        <a href="data.html" class="nav-link active" aria-current="page">Data &amp; Fakta</a>
+        <a href="aksi.html" class="nav-link">Aksi &amp; Rekomendasi</a>
         <a href="tentang.html" class="nav-link">Tentang Kami</a>
       </nav>
 
       <div class="header-actions">
-        <a href="index.html" class="nav-cta-btn">Simulasi Interaktif 🌿</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <a href="aksi.html" class="nav-cta-btn">Lanjut ke Aksi</a>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Buka menu navigasi"
+          aria-expanded="false" aria-controls="navMenu">
+          <span class="mobile-toggle-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="mobile-toggle-label">Menu</span>
         </button>
       </div>
     </div>
@@ -218,7 +223,7 @@
         <h4 class="mapel-name">PABP</h4>
         <span class="mapel-role">Etika &amp; Larangan Tabzir</span>
         <p class="mapel-desc">
-          Menanamkan nilai akhlak terpuji untuk tidak berlaku boros (*tabzir* dan *israf*) terhadap nikmat energi serta menjaga amanah kelestarian ciptaan Tuhan.
+          Menanamkan nilai akhlak terpuji untuk tidak berlaku boros (<em>tabzir</em> dan <em>israf</em>) terhadap nikmat energi serta menjaga amanah kelestarian ciptaan Tuhan.
         </p>
       </div>
 
@@ -238,6 +243,22 @@
         <p class="mapel-desc">
           Menyusun narasi kampanye yang komunikatif, merumuskan kalimat penjelas data yang objektif dan ringkas, serta memotivasi pembaca mengambil aksi nyata.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ALUR KAMPANYE: DATA -> AKSI & REKOMENDASI (FASE 3)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bridge-section" aria-label="Lanjut ke halaman Aksi dan Rekomendasi">
+    <div class="flow-strip-box">
+      <div class="flow-strip-copy">
+        <p class="flow-strip-label">Tahap Penutup Kampanye • Fase 3</p>
+        <h2 class="flow-strip-title">Sudah melihat angkanya? Saatnya ubah 781 kWh pemborosan menjadi aksi nyata.</h2>
+      </div>
+      <div class="flow-strip-links">
+        <a href="aksi.html" class="aksi-btn-primary">Buka Aksi &amp; Rekomendasi</a>
+        <a href="aksi.html#tantangan" class="aksi-btn-secondary">Ikuti Tantangan 7 Hari</a>
       </div>
     </div>
   </section>
@@ -265,6 +286,7 @@
         <ul class="footer-nav-list">
           <li><a href="index.html">Beranda &amp; Pohon Interaktif</a></li>
           <li><a href="data.html">Data &amp; Fakta Angket (Chart.js)</a></li>
+          <li><a href="aksi.html">Aksi &amp; Rekomendasi Nyata</a></li>
           <li><a href="tentang.html">Latar Belakang &amp; Lintas Mapel</a></li>
         </ul>
       </div>
@@ -294,7 +316,15 @@
     const navMenu = document.getElementById("navMenu");
     if (mobileToggle && navMenu) {
       mobileToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
+        const isOpen = navMenu.classList.toggle("open");
+        mobileToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navMenu.classList.contains("open")) {
+          navMenu.classList.remove("open");
+          mobileToggle.setAttribute("aria-expanded", "false");
+          mobileToggle.focus();
+        }
       });
     }
   </script>
