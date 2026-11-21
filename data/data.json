@@ -1,0 +1,99 @@
+{
+  "survei_info": {
+    "judul": "Survei & Observasi Kebiasaan Penggunaan Energi Listrik di Lingkungan Sekolah",
+    "fase": "Fase 2 - Data & Fakta Lintas Mata Pelajaran",
+    "kelas_pelaksana": "XI PPLG 3 (Pengembangan Perangkat Lunak dan Gim)",
+    "total_responden": 120,
+    "metode_pengumpulan": "Angket Kuesioner Digital & Observasi Lapangan Ruang Kelas",
+    "waktu_pelaksanaan": "November 2026",
+    "mapel_terkait": [
+      "Matematika",
+      "PABP",
+      "KIK",
+      "Pendidikan Pancasila",
+      "Bahasa Indonesia"
+    ]
+  },
+  "ringkasan_angka": {
+    "total_responden": 120,
+    "rata_rata_pemborosan_kwh": 781,
+    "potensi_penghematan_rupiah": "Rp 1.130.000",
+    "emisi_karbon_tercegah_kg": 625,
+    "persentase_komitmen_siswa": 87.5
+  },
+  "kebiasaan_lampu": {
+    "judul": "Kebiasaan Mematikan Lampu Saat Meninggalkan Ruang Kelas",
+    "deskripsi": "Data angket mengenai tindakan siswa terhadap lampu kelas ketika jam istirahat atau jam pulang sekolah.",
+    "labels": [
+      "Selalu Mematikan",
+      "Sering Mematikan",
+      "Kadang-kadang",
+      "Jarang / Menunggu Petugas",
+      "Tidak Pernah"
+    ],
+    "data": [42, 38, 22, 13, 5],
+    "persentase": [35.0, 31.7, 18.3, 10.8, 4.2],
+    "kesimpulan": "Sebanyak 35% siswa sudah memiliki inisiatif baik selalu mematikan lampu, namun 33,3% lainnya masih bersikap pasif dan membiarkan lampu menyala tanpa pengawasan saat ruang kelas kosong."
+  },
+  "pemborosan_perangkat": {
+    "judul": "Rata-Rata Durasi Pemborosan Listrik per Perangkat di Kelas (Jam / Hari)",
+    "deskripsi": "Hasil observasi durasi rata-rata perangkat elektronik tetap dibiarkan menyala saat tidak ada kegiatan belajar mengajar.",
+    "labels": [
+      "Lampu Ruang Kelas",
+      "Kipas Angin / AC",
+      "Proyektor LCD",
+      "Dispenser Air",
+      "PC Lab Komputer"
+    ],
+    "jam_per_hari": [3.8, 4.5, 2.1, 7.5, 3.2],
+    "estimasi_kwh_bulan": [114, 270, 63, 180, 154],
+    "kesimpulan": "Pendingin udara (AC/kipas) dan dispenser air merupakan beban pemborosan terbesar dengan durasi menyala sia-sia antara 4,5 hingga 7,5 jam per hari, menyedot lebih dari 450 kWh energi per bulan."
+  },
+  "kebiasaan_charger": {
+    "judul": "Perilaku Mencabut Charger Ponsel / Laptop (Vampire Power)",
+    "deskripsi": "Distribusi kebiasaan siswa terhadap pengisi daya gawai yang tetap tercolok di stopkontak ruang kelas maupun rumah.",
+    "labels": [
+      "Langsung Dicabut Usai Cas",
+      "Dibiarkan Tercolok di Stopkontak",
+      "Hanya Dicabut Jika Ingat"
+    ],
+    "data": [34, 58, 28],
+    "persentase": [28.3, 48.3, 23.4],
+    "kesimpulan": "Sebanyak 48,3% siswa masih membiarkan charger menancap di stopkontak meski perangkat sudah penuh, menyumbang beban listrik vampir (vampire power) yang terus menyedot daya secara tersembunyi."
+  },
+  "tingkat_komitmen": {
+    "judul": "Tingkat Kesadaran & Kesiapan Siswa Mendukung Aksi Hemat Energi",
+    "deskripsi": "Tingkat persetujuan siswa untuk berpartisipasi aktif dalam gerakan mematikan sakelar dan mencabut alat listrik di sekolah.",
+    "labels": [
+      "Sangat Berkomitmen",
+      "Cukup Berkomitmen",
+      "Ragu-Ragu / Netral",
+      "Kurang Peduli"
+    ],
+    "data": [68, 37, 11, 4],
+    "persentase": [56.7, 30.8, 9.2, 3.3],
+    "kesimpulan": "Sebesar 87,5% siswa menyatakan komitmen positif dan siap berpartisipasi dalam aksi hemat energi, membuktikan tingginya peluang keberhasilan kampanye jika didukung sarana sakelar yang memadai dan edukasi terarah."
+  },
+  "lintas_mapel": [
+    {
+      "mapel": "Matematika",
+      "fokus": "Statistika & Analisis Data",
+      "deskripsi": "Pengolahan frekuensi data angket 120 responden, perhitungan persentase, mean durasi pemborosan, serta visualisasi grafik batang dan lingkaran."
+    },
+    {
+      "mapel": "PABP",
+      "fokus": "Etika & Tanggung Jawab Moral",
+      "deskripsi": "Penerapan prinsip larangan hidup boros (tabzir/israf) dan amanah menjaga kelestarian alam sebagai cerminan keimanan serta etika religius."
+    },
+    {
+      "mapel": "KIK & Pendidikan Pancasila",
+      "fokus": "Karakter Gotong Royong & Kewarganegaraan",
+      "deskripsi": "Membangun budaya peduli lingkungan bersama warga sekolah sebagai pengamalan nilai integritas, kepedulian sosial, dan tanggung jawab masa depan bangsa."
+    },
+    {
+      "mapel": "Bahasa Indonesia",
+      "fokus": "Teks Persuasi & Komunikasi Efektif",
+      "deskripsi": "Menyusun kalimat penjelas data yang ringkas, objektif, dan persuasif untuk mengajak pembaca melakukan aksi nyata tanpa menggurui."
+    }
+  ]
+}

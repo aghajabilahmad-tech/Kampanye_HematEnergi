@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data &amp; Fakta – Kampanye Hemat Energi</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="data-page">
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVBAR BERSAMA (SHARED NAVBAR)
+       ═══════════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🌱</span>
+        <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="data.html" class="nav-link active">Data &amp; Fakta</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html" class="nav-cta-btn">Simulasi Interaktif 🌿</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO HEADER DATA & FAKTA
+       ═══════════════════════════════════════════════════════ -->
+  <section class="data-hero">
+    <div class="data-eyebrow">FASE 2 • HASIL OLAH ANGKET &amp; OBSERVASI LINTAS MAPEL</div>
+    <h1 class="data-title">Data &amp; Fakta Penggunaan Energi di Sekolah</h1>
+    <p class="data-desc">
+      Menampilkan hasil olah data angket 120 responden serta observasi fisik konsumsi listrik di ruang kelas. Bukti empiris kolaborasi lintas mata pelajaran (Matematika, PABP, KIK, Pendidikan Pancasila, Bahasa Indonesia) untuk memetakan kebiasaan pemborosan dan potensi aksi nyata penyelamatan bumi.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       QUICK STAT COUNTER CARDS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-icon">👥</span>
+      <span class="stat-value" id="statResponden">120 Siswa</span>
+      <span class="stat-label">Total Responden</span>
+      <span class="stat-sub">Siswa &amp; warga sekolah kelas XI PPLG</span>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-icon">⚡</span>
+      <span class="stat-value" id="statKwh">781 kWh/Bln</span>
+      <span class="stat-label">Rata-Rata Pemborosan</span>
+      <span class="stat-sub">Energi terbuang saat kelas kosong</span>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-icon">💰</span>
+      <span class="stat-value" id="statHemat">Rp 1.130.000/Bln</span>
+      <span class="stat-label">Potensi Penghematan</span>
+      <span class="stat-sub">Bisa dialihkan untuk fasilitas belajar</span>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-icon">🌱</span>
+      <span class="stat-value" id="statKomitmen">87.5%</span>
+      <span class="stat-label">Kesiapan Berubah</span>
+      <span class="stat-sub">Siswa berkomitmen mematikan alat listrik</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CHARTS GRID (CHART.JS VISUALIZATIONS)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="charts-container">
+    <div class="charts-grid">
+
+      <!-- Card 1: Kebiasaan Mematikan Lampu Kelas (Doughnut Chart) -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-area">
+            <h3 class="chart-title">Kebiasaan Mematikan Lampu Saat Kelas Kosong</h3>
+            <span class="chart-subtitle">Respon siswa saat jam istirahat atau jam pulang sekolah</span>
+          </div>
+          <span class="chart-tag">Matematika &amp; KIK</span>
+        </div>
+
+        <div class="chart-canvas-wrap">
+          <canvas id="chartLampu"></canvas>
+        </div>
+
+        <!-- 1–2 Kalimat Penjelas Inti di Bawah Grafik -->
+        <div class="chart-caption-box">
+          <span class="caption-label">💡 Temuan Analisis:</span>
+          <p class="chart-caption" id="descLampu">
+            Sebanyak 35% siswa sudah memiliki inisiatif baik selalu mematikan lampu, namun 33,3% lainnya masih bersikap pasif dan membiarkan lampu menyala tanpa pengawasan saat ruang kelas kosong.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2: Durasi Pemborosan Listrik per Perangkat (Bar Chart) -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-area">
+            <h3 class="chart-title">Durasi Pemborosan Listrik per Perangkat</h3>
+            <span class="chart-subtitle">Rata-rata jam menyala sia-sia tanpa kegiatan belajar (Jam/Hari)</span>
+          </div>
+          <span class="chart-tag">Observasi Fisik</span>
+        </div>
+
+        <div class="chart-canvas-wrap">
+          <canvas id="chartDurasi"></canvas>
+        </div>
+
+        <!-- 1–2 Kalimat Penjelas Inti di Bawah Grafik -->
+        <div class="chart-caption-box">
+          <span class="caption-label">⚡ Temuan Analisis:</span>
+          <p class="chart-caption" id="descDurasi">
+            Pendingin udara (AC/kipas) dan dispenser air merupakan beban pemborosan terbesar dengan durasi menyala sia-sia antara 4,5 hingga 7,5 jam per hari, menyedot lebih dari 450 kWh energi per bulan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: Kebiasaan Mencabut Charger HP (Pie Chart) -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-area">
+            <h3 class="chart-title">Perilaku Mencabut Charger HP / Laptop</h3>
+            <span class="chart-subtitle">Fenomena "Vampire Power" yang terus menyedot arus listrik</span>
+          </div>
+          <span class="chart-tag">PABP &amp; Etika Lingkungan</span>
+        </div>
+
+        <div class="chart-canvas-wrap">
+          <canvas id="chartCharger"></canvas>
+        </div>
+
+        <!-- 1–2 Kalimat Penjelas Inti di Bawah Grafik -->
+        <div class="chart-caption-box">
+          <span class="caption-label">🔌 Temuan Analisis:</span>
+          <p class="chart-caption" id="descCharger">
+            Sebanyak 48,3% siswa masih membiarkan charger menancap di stopkontak meski perangkat sudah penuh, menyumbang beban listrik vampir (vampire power) yang terus menyedot daya secara tersembunyi.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4: Tingkat Kesadaran & Komitmen Siswa (Horizontal Bar Chart) -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-area">
+            <h3 class="chart-title">Tingkat Kesadaran &amp; Komitmen Siswa</h3>
+            <span class="chart-subtitle">Kesiapan berpartisipasi dalam aksi gerakan hemat energi</span>
+          </div>
+          <span class="chart-tag">Pendidikan Pancasila</span>
+        </div>
+
+        <div class="chart-canvas-wrap">
+          <canvas id="chartKomitmen"></canvas>
+        </div>
+
+        <!-- 1–2 Kalimat Penjelas Inti di Bawah Grafik -->
+        <div class="chart-caption-box">
+          <span class="caption-label">🌱 Temuan Analisis:</span>
+          <p class="chart-caption" id="descKomitmen">
+            Sebesar 87,5% siswa menyatakan komitmen positif dan siap berpartisipasi dalam aksi hemat energi, membuktikan tingginya peluang keberhasilan kampanye jika didukung sarana sakelar yang memadai dan edukasi terarah.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTEGRASI LINTAS MAPEL (MATA PELAJARAN TERKAIT)
+       ═══════════════════════════════════════════════════════ -->
+  <section class="mapel-section">
+    <div class="mapel-header">
+      <div class="data-eyebrow" style="justify-content: center;">KOLABORASI KURIKULUM</div>
+      <h3>Integrasi Lintas Mata Pelajaran</h3>
+      <p>
+        Data dan sajian visual kampanye ini dirancang dengan memadukan kompetensi pembelajaran dari 5 mata pelajaran inti:
+      </p>
+    </div>
+
+    <div class="mapel-grid">
+      <div class="mapel-card">
+        <div class="mapel-icon-tag">📐</div>
+        <h4 class="mapel-name">Matematika</h4>
+        <span class="mapel-role">Statistika &amp; Olah Data</span>
+        <p class="mapel-desc">
+          Mengolah frekuensi angket, menghitung distribusi persentase, mengestimasi konsumsi kWh, dan merancang visualisasi grafik batang dan lingkaran secara akurat.
+        </p>
+      </div>
+
+      <div class="mapel-card">
+        <div class="mapel-icon-tag">📖</div>
+        <h4 class="mapel-name">PABP</h4>
+        <span class="mapel-role">Etika &amp; Larangan Tabzir</span>
+        <p class="mapel-desc">
+          Menanamkan nilai akhlak terpuji untuk tidak berlaku boros (*tabzir* dan *israf*) terhadap nikmat energi serta menjaga amanah kelestarian ciptaan Tuhan.
+        </p>
+      </div>
+
+      <div class="mapel-card">
+        <div class="mapel-icon-tag">🤝</div>
+        <h4 class="mapel-name">KIK &amp; PP</h4>
+        <span class="mapel-role">Gotong Royong &amp; Kepedulian</span>
+        <p class="mapel-desc">
+          Membangun karakter siswa yang tanggap lingkungan, memupuk integritas, dan menyadari hak serta kewajiban sebagai warga negara yang berwawasan hijau.
+        </p>
+      </div>
+
+      <div class="mapel-card">
+        <div class="mapel-icon-tag">✍️</div>
+        <h4 class="mapel-name">Bahasa Indonesia</h4>
+        <span class="mapel-role">Teks Persuasi &amp; Komunikasi</span>
+        <p class="mapel-desc">
+          Menyusun narasi kampanye yang komunikatif, merumuskan kalimat penjelas data yang objektif dan ringkas, serta memotivasi pembaca mengambil aksi nyata.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER BERSAMA (SHARED FOOTER)
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-brand">
+        <div class="footer-brand">
+          <span class="footer-logo-icon">🌱</span>
+          <span class="footer-logo-text">HematEnergi</span>
+        </div>
+        <p class="footer-tagline">
+          Gerakan kesadaran efisiensi konsumsi listrik dan pelestarian lingkungan hidup berbasis proyek kolaborasi lintas mata pelajaran.
+        </p>
+        <div class="footer-badge">
+          <span>XI PPLG 3 • SMK Negeri</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-title">Navigasi Halaman</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Beranda &amp; Pohon Interaktif</a></li>
+          <li><a href="data.html">Data &amp; Fakta Angket (Chart.js)</a></li>
+          <li><a href="tentang.html">Latar Belakang &amp; Lintas Mapel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-mapel">
+        <h4 class="footer-title">Integrasi Lintas Mapel</h4>
+        <p class="footer-mapel-text">
+          Kolaborasi kurikulum: <strong>Matematika</strong> (Statistika), <strong>PABP</strong> (Etika Lingkungan), <strong>KIK &amp; PP</strong> (Gotong Royong &amp; Tanggung Jawab), serta <strong>Bahasa Indonesia</strong> (Komunikasi Persuasif).
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 Kampanye Hemat Energi • Dibuat dengan cinta untuk bumi oleh Kelompok XI PPLG 3.</p>
+    </div>
+  </footer>
+
+  <!-- CDN Library Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Script Penampil Grafik Chart.js -->
+  <script src="js/charts.js"></script>
+
+  <!-- Mobile Toggle Menu Script -->
+  <script>
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navMenu = document.getElementById("navMenu");
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+    }
+  </script>
+
+</body>
+
+</html>

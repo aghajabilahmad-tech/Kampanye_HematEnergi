@@ -16,6 +16,33 @@
 <body>
 
   <!-- ═══════════════════════════════════════════════════════
+       NAVBAR BERSAMA (SHARED NAVBAR)
+       ═══════════════════════════════════════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="nav-brand">
+        <span class="brand-icon">🌱</span>
+        <span class="brand-text">Hemat<span class="brand-highlight">Energi</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Beranda</a>
+        <a href="data.html" class="nav-link">Data &amp; Fakta</a>
+        <a href="tentang.html" class="nav-link">Tentang Kami</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="data.html" class="nav-cta-btn">Lihat Data Riset 📊</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
        SECTION 1: HERO SECTION POHON INTERAKTIF
        ═══════════════════════════════════════════════════════ -->
   <section class="hero" id="hero">
@@ -335,7 +362,58 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER BERSAMA (SHARED FOOTER)
+       ═══════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col-brand">
+        <div class="footer-brand">
+          <span class="footer-logo-icon">🌱</span>
+          <span class="footer-logo-text">HematEnergi</span>
+        </div>
+        <p class="footer-tagline">
+          Gerakan kesadaran efisiensi konsumsi listrik dan pelestarian lingkungan hidup berbasis proyek kolaborasi lintas mata pelajaran.
+        </p>
+        <div class="footer-badge">
+          <span>XI PPLG 3 • SMK Negeri</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h4 class="footer-title">Navigasi Halaman</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Beranda &amp; Pohon Interaktif</a></li>
+          <li><a href="data.html">Data &amp; Fakta Angket (Chart.js)</a></li>
+          <li><a href="tentang.html">Latar Belakang &amp; Lintas Mapel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-mapel">
+        <h4 class="footer-title">Integrasi Lintas Mapel</h4>
+        <p class="footer-mapel-text">
+          Kolaborasi kurikulum: <strong>Matematika</strong> (Statistika), <strong>PABP</strong> (Etika Lingkungan), <strong>KIK &amp; PP</strong> (Gotong Royong &amp; Tanggung Jawab), serta <strong>Bahasa Indonesia</strong> (Komunikasi Persuasif).
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2026 Kampanye Hemat Energi • Dibuat dengan cinta untuk bumi oleh Kelompok XI PPLG 3.</p>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
+
+  <!-- Mobile Toggle Menu Script -->
+  <script>
+    const mobileToggle = document.getElementById("mobileToggle");
+    const navMenu = document.getElementById("navMenu");
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+    }
+  </script>
 
 </body>
 
