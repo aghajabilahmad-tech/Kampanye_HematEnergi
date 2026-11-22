@@ -410,9 +410,17 @@
       /* ═══════════════════════════════════════════════════════
          3. IntersectionObserver & Scroll Trigger for Section 2
          ═══════════════════════════════════════════════════════ */
+      const closingTitle = document.getElementById("campaignClosingTitle");
+
       function triggerSection2Reveal() {
         if (campaignSection && !campaignSection.classList.contains("is-revealed")) {
           campaignSection.classList.add("is-revealed");
+        }
+      }
+
+      function triggerClosingReveal() {
+        if (closingTitle && !closingTitle.classList.contains("is-revealed")) {
+          closingTitle.classList.add("is-revealed");
         }
       }
 
@@ -429,12 +437,33 @@
         triggerSection2Reveal();
       }
 
+      // Observer khusus untuk penutup kampanye "Hemat Energi Agar Bumi Terlindungi"
+      if (closingTitle && "IntersectionObserver" in window) {
+        const closingObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              triggerClosingReveal();
+            }
+          });
+        }, { threshold: [0.1, 0.25], rootMargin: "0px 0px -30px 0px" });
+        closingObserver.observe(closingTitle);
+      } else if (closingTitle) {
+        triggerClosingReveal();
+      }
+
       // Continuous check on scroll to ensure 100% trigger reliability
       window.addEventListener("scroll", () => {
         if (campaignSection && !campaignSection.classList.contains("is-revealed")) {
           const rect = campaignSection.getBoundingClientRect();
           if (rect.top < window.innerHeight * 0.88) {
             triggerSection2Reveal();
+          }
+        }
+
+        if (closingTitle && !closingTitle.classList.contains("is-revealed")) {
+          const cRect = closingTitle.getBoundingClientRect();
+          if (cRect.top < window.innerHeight * 0.9) {
+            triggerClosingReveal();
           }
         }
 
@@ -454,6 +483,12 @@
         const rect = campaignSection.getBoundingClientRect();
         if (rect.top < window.innerHeight * 0.88) {
           triggerSection2Reveal();
+        }
+      }
+      if (closingTitle) {
+        const cRect = closingTitle.getBoundingClientRect();
+        if (cRect.top < window.innerHeight * 0.9) {
+          triggerClosingReveal();
         }
       }
 
